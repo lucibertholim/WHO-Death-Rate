@@ -1,0 +1,536 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0213.2333                               -->
+<workbook original-version='18.1' source-build='2019.1.0 (20191.19.0213.2333)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='CDR_clean_tableau_format' inline='true' name='federated.0yiy53r0hie40g11e0jtw1wn2pt7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='CDR_clean_tableau_format' name='textscan.1we0az30mttfk8103n5dl1h2y9m7'>
+            <connection class='textclean' cleaning='yes' compat='no' csvFile='C:/Users/lucib/Documents/Data Analysis Bootcamp/WHO-Death-Rate/Output_files/CDR_clean_tableau_format.csv' dataRefreshTime='' directory='C:/Users/lucib/Documents/Data Analysis Bootcamp/WHO-Death-Rate/Output_files' filename='C:/Users/lucib/AppData/Local/Temp/TableauTemp/0b5prk013dwim01cbf7jk13839m9/CDR_clean_tableau_format.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation join='full' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[CDR_clean_tableau_format.csv].[Country]' />
+                <expression op='[ASDR_clean_tableau_format.csv].[Country]' />
+              </expression>
+              <expression op='='>
+                <expression op='[CDR_clean_tableau_format.csv].[Variable]' />
+                <expression op='[ASDR_clean_tableau_format.csv].[Variable]' />
+              </expression>
+              <expression op='='>
+                <expression op='[CDR_clean_tableau_format.csv].[Date]' />
+                <expression op='[ASDR_clean_tableau_format.csv].[Date]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation connection='textscan.1we0az30mttfk8103n5dl1h2y9m7' name='CDR_clean_tableau_format.csv' table='[CDR_clean_tableau_format#csv$]' type='table'>
+            <columns character-set='UTF-8' gridOrigin='A1:E10001:no:A1:E10001:1' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='Country' ordinal='1' />
+              <column datatype='string' name='Variable' ordinal='2' />
+              <column datatype='integer' name='Date' ordinal='3' />
+              <column datatype='real' name='Crude Death Rate' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1we0az30mttfk8103n5dl1h2y9m7' name='ASDR_clean_tableau_format.csv' table='[ASDR_clean_tableau_format#csv$]' type='table'>
+            <columns gridOrigin='A1:F10001:no:A1:F10001:1'>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='Country' ordinal='1' />
+              <column datatype='integer' name='Population' ordinal='2' />
+              <column datatype='string' name='Variable' ordinal='3' />
+              <column datatype='integer' name='Date' ordinal='4' />
+              <column datatype='real' name='Age-standardized Death Rate' ordinal='5' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Age-standardized Death Rate]' value='[ASDR_clean_tableau_format.csv].[Age-standardized Death Rate]' />
+          <map key='[Country (ASDR_clean_tableau_format.csv)]' value='[ASDR_clean_tableau_format.csv].[Country]' />
+          <map key='[Country]' value='[CDR_clean_tableau_format.csv].[Country]' />
+          <map key='[Crude Death Rate]' value='[CDR_clean_tableau_format.csv].[Crude Death Rate]' />
+          <map key='[Date (ASDR_clean_tableau_format.csv)]' value='[ASDR_clean_tableau_format.csv].[Date]' />
+          <map key='[Date]' value='[CDR_clean_tableau_format.csv].[Date]' />
+          <map key='[F1 (ASDR_clean_tableau_format.csv)]' value='[ASDR_clean_tableau_format.csv].[F1]' />
+          <map key='[F1]' value='[CDR_clean_tableau_format.csv].[F1]' />
+          <map key='[Population]' value='[ASDR_clean_tableau_format.csv].[Population]' />
+          <map key='[Variable (ASDR_clean_tableau_format.csv)]' value='[ASDR_clean_tableau_format.csv].[Variable]' />
+          <map key='[Variable]' value='[CDR_clean_tableau_format.csv].[Variable]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[CDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[CDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variable</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Variable]</local-name>
+            <parent-name>[CDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Variable</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[CDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Crude Death Rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Crude Death Rate]</local-name>
+            <parent-name>[CDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Crude Death Rate</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[CDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E10001:no:A1:E10001:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>28277</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (ASDR_clean_tableau_format.csv)]</local-name>
+            <parent-name>[ASDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country (ASDR_clean_tableau_format.csv)]</local-name>
+            <parent-name>[ASDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[ASDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variable</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Variable (ASDR_clean_tableau_format.csv)]</local-name>
+            <parent-name>[ASDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Variable</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Date (ASDR_clean_tableau_format.csv)]</local-name>
+            <parent-name>[ASDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age-standardized Death Rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Age-standardized Death Rate]</local-name>
+            <parent-name>[ASDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias>Age-standardized Death Rate</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ASDR_clean_tableau_format.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:F10001:no:A1:F10001:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>37096</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Country (ASDR clean tableau format.csv)' datatype='string' name='[Country (ASDR_clean_tableau_format.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column aggregation='Sum' caption='Date (ASDR clean tableau format.csv)' datatype='integer' name='[Date (ASDR_clean_tableau_format.csv)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Date]' role='dimension' type='ordinal' />
+      <column caption='F1 (ASDR clean tableau format.csv)' datatype='integer' name='[F1 (ASDR_clean_tableau_format.csv)]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Variable (ASDR clean tableau format.csv)' datatype='string' name='[Variable (ASDR_clean_tableau_format.csv)]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.425954' measure-ordering='alphabetic' measure-percentage='0.574046' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Brazil&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='CDR_clean_tableau_format' name='federated.0yiy53r0hie40g11e0jtw1wn2pt7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0yiy53r0hie40g11e0jtw1wn2pt7'>
+            <column datatype='real' name='[Age-standardized Death Rate]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Crude Death Rate]' role='measure' type='quantitative' />
+            <column aggregation='Sum' datatype='integer' name='[Date]' role='dimension' type='ordinal' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Age-standardized Death Rate]' derivation='Sum' name='[sum:Age-standardized Death Rate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Crude Death Rate]' derivation='Sum' name='[sum:Crude Death Rate:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0yiy53r0hie40g11e0jtw1wn2pt7].[sum:Crude Death Rate:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0yiy53r0hie40g11e0jtw1wn2pt7].[sum:Age-standardized Death Rate:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+          </pane>
+        </panes>
+        <rows>([federated.0yiy53r0hie40g11e0jtw1wn2pt7].[sum:Crude Death Rate:qk] + [federated.0yiy53r0hie40g11e0jtw1wn2pt7].[sum:Age-standardized Death Rate:qk])</rows>
+        <cols>[federated.0yiy53r0hie40g11e0jtw1wn2pt7].[none:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{D74FFC8C-1C00-4FBC-8001-94CC89BE44EC}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0yiy53r0hie40g11e0jtw1wn2pt7].[none:Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E7650234-BCFE-4FD8-859E-DF15A8468EFC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
